@@ -6,7 +6,7 @@ type: "page"
 
 <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
   <div>
-    <h2 class="text-3xl font-bold mb-6 text-accent">LBES STEM Workshop</h2>
+    <h2 class="text-3xl font-bold text-white mb-6 text-accent">LBES STEM Workshop</h2>
     <p class="mb-4 text-lg">
       Igniting young minds, one spark at a time! InspireLabs STEM is on a mission to make science fun, hands-on, and accessible for every student—especially in underserved communities.
     </p>

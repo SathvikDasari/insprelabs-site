@@ -20,19 +20,19 @@ type: "page"
 
   <hr class="my-4" />
 
-  <h3 class="text-xl font-bold">Our Vision</h3>
+  <h3 class="text-xl font-bold text-white">Our Vision</h3>
   <p>
     We envision a world where every child has access to quality STEM education and the tools to become tomorrow’s innovators. Through our programs, we strive to break down barriers and bring hands-on science directly to the classroom.
   </p>
 
   <hr class="my-4" />
 
-  <h3 class="text-xl font-bold">What We Do</h3>
+  <h3 class="text-xl font-bold text-white">What We Do</h3>
   <p>School STEM workshops<br>Community science expos<br>Mentorship programs<br>Hands-on experiments<br>Project-based learning</p>
 
   <hr class="my-4" />
 
-  <h3 class="text-xl font-bold">Join Us</h3>
+  <h3 class="text-xl font-bold text-white">Join Us</h3>
   <p>
     Want to make a difference? Join our mission to inspire the next generation of scientists, engineers, and creators.
   </p>

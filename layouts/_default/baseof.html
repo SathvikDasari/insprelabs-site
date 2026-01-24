@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="{{ .Language.Lang }}">
+<html lang="{{ .Language.Lang }}" class="dark">
 
 <head>
     {{ partial "head.html" . }}
 </head>
 
-<body class="bg-zinc-100 dark:bg-gray-800">
+<body class="bg-gray-900 text-gray-100">
     {{ partial "nav.html" . }}
     {{ block "main" . }}{{ end }}
     {{ partial "footer" . }}

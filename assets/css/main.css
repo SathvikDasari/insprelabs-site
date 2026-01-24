@@ -2179,9 +2179,11 @@ EmojiSymbols;
   }
 }
 
+
 @media (min-width: 1280px) {
   .xl\:text-9xl {
     font-size: 8rem;
     line-height: 1;
   }
 }
+
