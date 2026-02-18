@@ -1,88 +1,98 @@
-<p align="center" style="padding-top:20px">
- <img width="100px" src="images/logo-tailbliss-round.svg" align="center" alt="GitHub Readme Stats" />
- <h1 align="center">TailBliss</h1>
- <p align="center">TailBliss is an opinionated Hugo Starter with Tailwind CSS 3.2 and Alpine.js with light/dark modes.</p>
-</p>
-  <p align="center">
-    <a href="https://github.com/nusserstudios/tailbliss/actions/">
-      <img alt="Tests Passing" src="https://github.com/nusserstudios/tailbliss/actions/workflows/codeql.yml/badge.svg" />
-    </a>
-    <a href="https://github.com/nusserstudios/tailbliss/contributors">
-      <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/nusserstudios/tailbliss?color=0088ff" />
-    </a>
-    <a href="https://github.com/nusserstudios/tailbliss/issues">
-      <img alt="Issues" src="https://img.shields.io/github/issues/nusserstudios/tailbliss?color=fc0b03" />
-    </a>
-    <a href="https://github.com/nusserstudios/tailbliss/pulls">
-      <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/nusserstudios/tailbliss?color=f97316" />
-    </a>
-    <br>
-    <br>
-    <a href="https://gohugo.io/">
-      <img src="https://img.shields.io/badge/Hugo%20-0.105.0%20-gray.svg?colorA=c9177e&colorB=FF4088&style=for-the-badge"/>
-    </a>
-    <a href="https://tailwindcss.com/">
-      <img src="https://img.shields.io/badge/TailwindCSS%20-V3-gray.svg?colorA=0284c7&colorB=38bdf8&style=for-the-badge"/>
-    </a>
-    <a href="https://alpinejs.dev/">
-      <img src="https://img.shields.io/badge/Alpine.js%20-V3-gray.svg?colorA=68a5af&colorB=77c1d2&style=for-the-badge"/>
-    </a>
-  </p>
+# 🌐 InspireLabs Website
 
-  <p align="center">
-    <a href="https://tailbliss.netlify.app/">View Demo</a>
-    ·
-    <a href="https://github.com/nusserstudios/tailbliss/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/nusserstudios/tailbliss/discussions/categories/feature-request">Request Feature</a>
-    ·
-    <a href="https://github.com/nusserstudios/tailbliss/discussions/categories/general">Ask Question</a>
-  </p>
-</p>
+Welcome to the InspireLabs website repository.
 
-<p align="center">
-<img src="https://raw.githubusercontent.com/nusserstudios/tailbliss/main/images/tailbliss-lighthouse-11-03-22.png" alt="Tailbliss Google Lighthouse Score" style="margin: 25px auto; max-width: 830px" width="100%" height="" />
-</p>
+This site is built using:
 
-**Install to VS Code with:**  
-`git clone git@github.com:nusserstudios/tailbliss your-name`
+-   Hugo (Extended)
+-   Tailwind CSS
+-   GitHub Actions
+-   GitHub Pages
 
-##### Install with NPM 
-`npm install`
-##### Install with Yarn
-`yarn`
+This guide explains how to set up the website locally and test changes
+before deployment.
 
-**To start developing:**
-##### Develop with NPM 
-`npm run start`
-##### Develop with Yarn
-`yarn start`
+------------------------------------------------------------------------
 
-**To generate the site HTML:**
-##### Build with NPM 
-`npm run build`
-##### Build with Yarn
-`yarn build`
+# 🚀 Local Setup Guide
 
-**npm run start** will run two commands parallel:  
-`npx tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch`
+## 1️⃣ Install Required Software
 
-Has paginated Categories and Tags. Markdown files will automatically convert images put into `/assets` folder to .webp images. 
+### Install Git
 
-## Image shortcodes for webp as well.
-{{< imgc src="img-name.jpg" alt="Place alt text here." >}}
+Download: https://git-scm.com/downloads
 
-<a href="https://www.buymeacoffee.com/nusserstudios" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+Verify: git --version
 
-## Form
-To use the form, visit [FormSubmit.Co](https://formsubmit.co/). Locate the contact form in "content/contact.md", and update the form action with the email address you want on this line: **action="https://formsubmit.co/your@email.com" method="POST"**
+------------------------------------------------------------------------
 
+### Install Node.js (LTS recommended)
 
-## Credits
-4044ever - Original Theme
-https://github.com/4044ever/Hugo-Tailwind-3.0.git
+Download: https://nodejs.org
 
-Jan Heise - Alpine.js Navbar
-https://github.com/jan-heise/responsive-navbar-with-dropdown
+Verify: node -v npm -v
 
-Made for Hacktoberfest, with ❤️ by NusserStudios.
+------------------------------------------------------------------------
+
+### Install Hugo (Extended Version Required)
+
+Download: https://gohugo.io/installation/
+
+Verify: hugo version
+
+Make sure it says **extended**.
+
+------------------------------------------------------------------------
+
+## 2️⃣ Clone the Repository
+
+git clone https://github.com/SathvikDasari/insprelabs-site.git cd
+insprelabs-site
+
+------------------------------------------------------------------------
+
+## 3️⃣ Install Project Dependencies
+
+npm install
+
+------------------------------------------------------------------------
+
+## 4️⃣ Run the Website Locally
+
+hugo server
+
+Open your browser and visit:
+
+http://localhost:1313
+
+The page will automatically refresh when you save changes.
+
+------------------------------------------------------------------------
+
+# ✏️ Editing the Website
+
+Most content is inside:
+
+content/
+
+Examples:
+
+-   About page → content/about/\_index.md
+-   Contact page → content/contact/\_index.md
+-   Programs → content/programs/
+
+------------------------------------------------------------------------
+
+# 🧪 Always Test Before Deploying
+
+1.  Run hugo server
+2.  Test edited pages
+3.  Confirm:
+    -   Text is visible
+    -   Links work
+    -   Layout is correct
+    -   No console errors
+
+------------------------------------------------------------------------
+
+See DEPLOYMENT.md for how to push changes live.
