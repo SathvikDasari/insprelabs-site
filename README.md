@@ -1,98 +1,196 @@
-# 🌐 InspireLabs Website
 
-Welcome to the InspireLabs website repository.
+# 🚀 InspireLabs Website
 
-This site is built using:
+Official website for **InspireLabs**, built using:
 
--   Hugo (Extended)
--   Tailwind CSS
--   GitHub Actions
--   GitHub Pages
+- Hugo (Extended)
+- TailwindCSS
+- GitHub Actions
+- GitHub Pages
 
-This guide explains how to set up the website locally and test changes
-before deployment.
+Live Site:
+👉 https://inspirelabs.org
 
-------------------------------------------------------------------------
+---
 
-# 🚀 Local Setup Guide
+# 🖥 Local Setup Guide
+
+Follow these steps to run the website on your computer.
+
+---
 
 ## 1️⃣ Install Required Software
 
-### Install Git
+### ✅ Windows (Using winget)
 
-Download: https://git-scm.com/downloads
+Open PowerShell as Administrator:
 
-Verify: git --version
+winget install --id Git.Git -e
+winget install --id OpenJS.NodeJS.LTS -e
+winget install --id Hugo.Hugo.Extended -e
 
-------------------------------------------------------------------------
+Verify installation:
 
-### Install Node.js (LTS recommended)
+git --version
+node -v
+npm -v
+hugo version
 
-Download: https://nodejs.org
+⚠ Hugo version MUST say **extended**.
 
-Verify: node -v npm -v
+---
 
-------------------------------------------------------------------------
+### ✅ macOS (Using Homebrew)
 
-### Install Hugo (Extended Version Required)
+brew install git
+brew install node
+brew install hugo
 
-Download: https://gohugo.io/installation/
+Verify:
 
-Verify: hugo version
+git --version
+node -v
+npm -v
+hugo version
 
-Make sure it says **extended**.
-
-------------------------------------------------------------------------
+---
 
 ## 2️⃣ Clone the Repository
 
-git clone https://github.com/SathvikDasari/insprelabs-site.git cd
-insprelabs-site
+git clone https://github.com/SathvikDasari/inspirelabs-site.git
+cd inspirelabs-site
 
-------------------------------------------------------------------------
+---
 
 ## 3️⃣ Install Project Dependencies
 
 npm install
 
-------------------------------------------------------------------------
+---
 
-## 4️⃣ Run the Website Locally
+## 4️⃣ Run Website Locally
 
 hugo server
 
-Open your browser and visit:
-
+Open in browser:
 http://localhost:1313
 
-The page will automatically refresh when you save changes.
+The site will automatically refresh when you save changes.
 
-------------------------------------------------------------------------
+---
 
-# ✏️ Editing the Website
+# 🔁 Development Workflow (IMPORTANT)
 
-Most content is inside:
+⚠ Do NOT push directly to `main`.
 
-content/
+---
 
-Examples:
+## Step 1 – Create a Branch
 
--   About page → content/about/\_index.md
--   Contact page → content/contact/\_index.md
--   Programs → content/programs/
+git checkout -b update-homepage-text
 
-------------------------------------------------------------------------
+---
 
-# 🧪 Always Test Before Deploying
+## Step 2 – Make Your Changes
 
-1.  Run hugo server
-2.  Test edited pages
-3.  Confirm:
-    -   Text is visible
-    -   Links work
-    -   Layout is correct
-    -   No console errors
+Edit content, layouts, images, etc.
 
-------------------------------------------------------------------------
+---
 
-See DEPLOYMENT.md for how to push changes live.
+## Step 3 – Commit Changes
+
+git add .
+git commit -m "describe your changes clearly"
+
+---
+
+## Step 4 – Push Branch
+
+git push -u origin update-homepage-text
+
+---
+
+## Step 5 – Open Pull Request
+
+1. Go to GitHub
+2. Open Pull Request
+3. Merge into `main`
+
+After merge:
+✅ GitHub automatically builds  
+✅ GitHub Pages automatically deploys  
+✅ Live site updates  
+
+No manual deployment needed.
+
+---
+
+# 🚀 Deployment
+
+Deployment is fully automated using GitHub Actions.
+
+When code is merged into `main`:
+
+1. Hugo builds the site
+2. Static files are generated
+3. GitHub Pages deploys the site
+4. Live at https://inspirelabs.org
+
+---
+
+# 🔒 Branch Protection
+
+The `main` branch is protected:
+
+- Pull Request required
+- Direct pushes blocked
+- GitHub Actions must pass
+
+---
+
+# 👥 Contributor Guidelines
+
+- Always create a new branch
+- Use clear commit messages
+- Keep changes focused (one feature per PR)
+- Test locally before pushing
+- Do NOT edit generated files
+
+---
+
+# 📁 Project Structure
+
+content/    → Website pages  
+layouts/    → Page templates  
+static/     → Images and static assets  
+assets/     → Tailwind and CSS  
+themes/     → TailBliss theme  
+
+---
+
+# 🆘 Common Issues
+
+### Hugo error: "POSTCSS not found"
+
+Run:
+npm install
+
+---
+
+### Hugo version must say "extended"
+
+If not (Windows):
+winget install Hugo.Hugo.Extended --force
+
+---
+
+# 🎯 Maintainer
+
+Created and maintained by  
+**Sathvik Dasari**
+
+---
+
+# 🌟 InspireLabs
+
+Empowering the next generation of innovators.
