@@ -2,11 +2,8 @@ name: Build and Deploy Hugo site to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    branches: ["main"]
+  workflow_dispatch:
 
 permissions:
   contents: read
