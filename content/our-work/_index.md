@@ -6,6 +6,21 @@ type: "page"
 
 <div class="not-prose w-full text-left flex flex-col" style="margin-top: 2.75rem; gap: 5rem;">
 <section class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+  <div>
+    <h2 class="text-3xl font-bold text-white mb-6 text-accent">Rockville Science Center (April 2026)</h2>
+    <p class="mb-4 text-lg">
+      InspireLabs STEM hosted a NASA-inspired Air Vortex Cannon workshop at the Rockville Science Center for students in grades 3–8. Using a plastic cup, balloon, and tape, students built their own vortex cannons and explored how air pressure creates a spinning blast of air.
+    </p>
+    <p class="text-lg">
+      By experimenting with hole size and pull distance, students connected their builds to real aerospace science—including NASA's research on winglets, the upward-bent wing tips that reduce vortexes and improve airplane fuel efficiency.
+    </p>
+  </div>
+  <div class="flex justify-center md:justify-end">
+    <img src="/images/RSCAPRIL.JPG" alt="Air Vortex Cannon Workshop at Rockville Science Center" class="rounded-xl shadow-lg w-full max-w-lg object-cover" style="height: 24rem;" />
+  </div>
+</section>
+
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
   <div class="flex justify-center md:justify-start order-2 md:order-1">
     <img src="/images/KCS.JPG" alt="KCS STEM workshop at Terraset Elementary School" class="rounded-xl shadow-lg w-full max-w-lg object-cover" style="height: 24rem;" />
   </div>
