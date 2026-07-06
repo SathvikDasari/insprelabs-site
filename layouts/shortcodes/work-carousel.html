@@ -1,0 +1,120 @@
+{{/* Work carousel — one image at a time, horizontal slide between images.
+     Usage: {{< work-carousel
+               img1="/images/RSCAPRIL.JPG"  alt1="..."
+               img2="/images/RSCAPRIL2.JPG" alt2="..."
+               img3="/images/RSCAPRIL3.JPG" alt3="..." >}}
+     Supports up to 6 images (img1..img6). Empty/omitted slots are skipped. */}}
+{{ $imgs := slice }}
+{{ range (seq 1 6) }}
+  {{ $src := $.Get (printf "img%d" .) }}
+  {{ if $src }}
+    {{ $imgs = $imgs | append (dict "src" $src "alt" (or ($.Get (printf "alt%d" .)) "")) }}
+  {{ end }}
+{{ end }}
+{{ $n := len $imgs }}
+{{ $id := printf "wc-%d" (now.UnixNano) }}
+
+<div class="not-prose work-carousel" data-work-carousel style="display:flex; flex-direction:column; align-items:center; width:100%; margin:0 auto;">
+
+  <div style="display:flex; align-items:center; justify-content:center; gap:0.85rem; width:100%;">
+
+    {{ if gt $n 1 }}
+    <button type="button" class="work-carousel-prev"
+            style="flex-shrink:0; width:40px; height:40px; border-radius:50%; border:1px solid rgba(255,255,255,0.3); background:rgba(17,24,39,0.8); color:white; cursor:pointer; display:flex; align-items:center; justify-content:center;"
+            aria-label="Previous image">
+      <svg style="width:20px; height:20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    {{ end }}
+
+    <div class="work-carousel-viewport" style="flex:1 1 auto; max-width:32rem; height:24rem; overflow:hidden; border-radius:0.75rem; box-shadow:0 10px 15px -3px rgba(0,0,0,0.4);">
+      <div class="work-carousel-track" style="display:flex; height:100%; width:{{ mul $n 100 }}%; transform:translateX(0%); transition:transform 0.45s ease-out;">
+        {{ range $imgs }}
+        <div class="work-carousel-slide" style="width:{{ div 100.0 $n }}%; height:100%; flex-shrink:0; background:#1f2937;">
+          <img src="{{ .src }}" alt="{{ .alt }}" style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;" />
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+    {{ if gt $n 1 }}
+    <button type="button" class="work-carousel-next"
+            style="flex-shrink:0; width:40px; height:40px; border-radius:50%; border:1px solid rgba(255,255,255,0.3); background:rgba(17,24,39,0.8); color:white; cursor:pointer; display:flex; align-items:center; justify-content:center;"
+            aria-label="Next image">
+      <svg style="width:20px; height:20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+    </button>
+    {{ end }}
+
+  </div>
+
+  {{ if gt $n 1 }}
+  <div class="work-carousel-dots" style="display:flex; justify-content:center; gap:0.5rem; margin-top:0.9rem;">
+    {{ range $i, $e := $imgs }}
+    <button type="button" class="work-carousel-dot" data-idx="{{ $i }}"
+            style="width:9px; height:9px; padding:0; border-radius:50%; border:none; cursor:pointer; background:rgba(255,255,255,0.35);"
+            aria-label="Go to image {{ add $i 1 }}"></button>
+    {{ end }}
+  </div>
+  {{ end }}
+
+</div>
+
+{{ if gt $n 1 }}
+<script>
+(function () {
+  var roots = document.querySelectorAll('[data-work-carousel]');
+  var root = roots[roots.length - 1];
+  if (!root || root.dataset.wcInit) return;
+  root.dataset.wcInit = '1';
+
+  var track = root.querySelector('.work-carousel-track');
+  var prev = root.querySelector('.work-carousel-prev');
+  var next = root.querySelector('.work-carousel-next');
+  var dots = root.querySelectorAll('.work-carousel-dot');
+  var n = {{ $n }};
+  var i = 0, lock = false, slideMs = 450;
+
+  function setDots(idx) {
+    dots.forEach(function (d, k) {
+      d.style.background = k === idx ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.35)';
+    });
+  }
+  setDots(0);
+
+  function setInteractive(on) {
+    if (prev) prev.disabled = !on;
+    if (next) next.disabled = !on;
+  }
+
+  function go(target) {
+    var nextI = ((target % n) + n) % n;
+    if (lock || nextI === i) return;
+    lock = true;
+    setInteractive(false);
+    i = nextI;
+    track.style.transform = 'translateX(-' + (i * (100 / n)) + '%)';
+    setDots(i);
+
+    var done = false;
+    function finish() {
+      if (done) return;
+      done = true;
+      track.removeEventListener('transitionend', onEnd);
+      lock = false;
+      setInteractive(true);
+    }
+    function onEnd(e) {
+      if (!e || e.target !== track || e.propertyName !== 'transform') return;
+      finish();
+    }
+    track.addEventListener('transitionend', onEnd);
+    setTimeout(finish, slideMs + 80);
+  }
+
+  if (prev) prev.addEventListener('click', function () { go(i - 1); });
+  if (next) next.addEventListener('click', function () { go(i + 1); });
+  dots.forEach(function (d) {
+    d.addEventListener('click', function () { go(parseInt(d.dataset.idx, 10)); });
+  });
+})();
+</script>
+{{ end }}
