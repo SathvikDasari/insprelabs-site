@@ -5,7 +5,7 @@ type: "page"
 ---
 
 <div class="not-prose w-full text-left flex flex-col" style="margin-top: 2.75rem; gap: 5rem;">
-<section class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
   <div>
     <h2 class="text-3xl font-bold text-white mb-6 text-accent">Rockville Science Center (April 2026)</h2>
     <p class="mb-4 text-lg">
@@ -16,13 +16,19 @@ type: "page"
     </p>
   </div>
   <div class="flex justify-center md:justify-end">
-    <img src="/images/RSCAPRIL.JPG" alt="Air Vortex Cannon Workshop at Rockville Science Center" class="rounded-xl shadow-lg w-full max-w-lg object-cover" style="height: 24rem;" />
+    {{< work-carousel
+        img1="/images/RSCAPRIL.JPG"  alt1="Air Vortex Cannon Workshop at Rockville Science Center"
+        img2="/images/RSCAPRIL2.JPG" alt2="Students building vortex cannons at Rockville Science Center"
+        img3="/images/RSCAPRIL3.JPG" alt3="Air Vortex Cannon Workshop at Rockville Science Center" >}}
   </div>
 </section>
 
-<section class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
   <div class="flex justify-center md:justify-start order-2 md:order-1">
-    <img src="/images/KCS.JPG" alt="KCS STEM workshop at Terraset Elementary School" class="rounded-xl shadow-lg w-full max-w-lg object-cover" style="height: 24rem;" />
+    {{< work-carousel
+        img1="/images/KCS.JPG"  alt1="KCS STEM workshop at Terraset Elementary School"
+        img2="/images/KCS2.JPG" alt2="Students at the KCS STEM workshop at Terraset Elementary School"
+        img3="/images/KCS3.JPG" alt3="KCS STEM workshop at Terraset Elementary School" >}}
   </div>
   <div class="order-1 md:order-2">
     <h2 class="text-3xl font-bold text-white mb-6 text-accent">KCS Workshop at Terraset Elementary</h2>
@@ -35,7 +41,7 @@ type: "page"
   </div>
 </section>
 
-<section class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
   <div>
     <h2 class="text-3xl font-bold text-white mb-6 text-accent">LBES 2026 STEM Workshop</h2>
     <p class="mb-4 text-lg">
@@ -47,13 +53,19 @@ type: "page"
   </div>
 
   <div class="flex justify-center md:justify-end">
-    <img src="/images/LBES2026.png" alt="LBES 2026 STEM Workshop" class="rounded-xl shadow-lg w-full max-w-lg object-cover" style="height: 24rem;" />
+    {{< work-carousel
+        img1="/images/LBES2026.png"  alt1="LBES 2026 STEM Workshop"
+        img2="/images/LBES20262.JPG" alt2="Students at the LBES 2026 STEM Workshop"
+        img3="/images/LBES20263.JPG" alt3="LBES 2026 STEM Workshop" >}}
   </div>
 </section>
 
-<section class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
   <div class="flex justify-center md:justify-start order-2 md:order-1">
-    <img src="/images/goodrockville.png" alt="Rockville Science Center Workshop" class="rounded-xl shadow-lg w-full max-w-lg object-cover" style="height: 24rem;" />
+    {{< work-carousel
+        img1="/images/goodrockville.png"  alt1="Rockville Science Center Workshop"
+        img2="/images/goodrockville2.JPG" alt2="Students at the Rockville Science Center Workshop"
+        img3="/images/goodrockville3.JPG" alt3="Rockville Science Center Workshop" >}}
   </div>
   <div class="order-1 md:order-2">
     <h2 class="text-3xl font-bold text-white mb-6 text-accent">Rockville Science Center Workshop</h2>
@@ -63,7 +75,7 @@ type: "page"
   </div>
 </section>
 
-<section class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
   <div>
     <h2 class="text-3xl font-bold text-white mb-6 text-accent">LBES STEM Workshop</h2>
     <p class="mb-4 text-lg">
@@ -75,7 +87,10 @@ type: "page"
   </div>
 
   <div class="flex justify-center md:justify-end">
-    <img src="/images/lilben1.png" alt="LBES STEM Workshop" class="rounded-xl shadow-lg w-full max-w-lg" />
+    {{< work-carousel
+        img1="/images/lilben4.jpg" alt1="LBES STEM Workshop"
+        img2="/images/lilben2.jpg" alt2="Students at the LBES STEM Workshop"
+        img3="/images/lilben3.jpg" alt3="LBES STEM Workshop" >}}
   </div>
 </section>
 </div>
